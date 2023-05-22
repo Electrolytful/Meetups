@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom"
+import styles from './index.module.css';
+
 
 export default function Layout() {
     return (
         <>
-            <header>
-                <div>Meetups App</div>
+            <header className={styles.header}>
+                <div className={styles.logo}>Meetups App</div>
                 <nav>
                     <ul>
                         <li>
