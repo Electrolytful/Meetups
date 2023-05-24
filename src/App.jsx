@@ -13,13 +13,12 @@ import {
 
 export default function App() {
   return (
-    <>
-      <Layout />
-      <Routes>
-        <Route path="/" element={<AllMeetupsPage />} />
-        <Route path="/new-meetup" element={<NewMeetupPage />} />
-        <Route path="/favourites" element={<FavouritesPage />} />
-      </Routes>
-    </>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<AllMeetupsPage />} />
+          <Route path="/new-meetup" element={<NewMeetupPage />} />
+          <Route path="/favourites" element={<FavouritesPage />} />
+        </Routes>
+      </Layout>
   );
 }

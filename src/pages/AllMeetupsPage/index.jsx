@@ -23,6 +23,7 @@ const DUMMY_DATA = [
   },
 ];
 
+
 export default function AllMeetupsPage() {
   return (
     <section>
