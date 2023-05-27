@@ -4,7 +4,7 @@ import styles from "./index.module.css";
 
 import Card from "../../ui/Card";
 
-export default function MeetupForm() {
+export default function MeetupForm({ addMeetup }) {
   const titleInputRef = useRef();
   const imageInputRef = useRef();
   const addressInputRef = useRef();
@@ -25,8 +25,7 @@ export default function MeetupForm() {
       description: enteredDescription,
     };
 
-    // send data to server here
-    console.log(meetupData);
+    addMeetup(meetupData);
   };
 
   return (
