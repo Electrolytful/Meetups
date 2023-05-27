@@ -1,7 +1,12 @@
+import { MeetupForm } from "../../components";
+
+import styles from './index.module.css';
+
 export default function NewMeetupPage() {
-    return (
-        <>
-            <h1>New Meetup Page</h1>
-        </>
-    )
+  return (
+    <section className={styles.container}>
+      <h1>Add a New Meetup</h1>
+      <MeetupForm />
+    </section>
+  );
 }
