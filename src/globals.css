@@ -1,5 +1,5 @@
 /* imports */
-@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300&family=Libre+Franklin:wght@300&display=swap');
 
 :root {
   /* colors */
@@ -12,7 +12,7 @@
 
   /* fonts */
   --almarai: 'Almarai', sans-serif;
-  --roboto: 'Roboto', sans-serif;
+  --libre: 'Libre Franklin', sans-serif;
 
   /* font sizes */
   --small-font: 1rem;

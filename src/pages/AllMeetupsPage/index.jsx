@@ -1,34 +1,54 @@
-import {
-  MeetupList,
-} from '../../components';
+import { useState, useEffect } from "react";
 
-const DUMMY_DATA = [
-  {
-    id: "1",
-    title: "This is a first meetup",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg",
-    address: "Meetupstreet 5, 12345 Meetup City",
-    description:
-      "This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!",
-  },
-  {
-    id: "2",
-    title: "This is a second meetup",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg",
-    address: "Meetupstreet 5, 12345 Meetup City",
-    description:
-      "This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!",
-  },
-];
-
+import { MeetupList } from "../../components";
 
 export default function AllMeetupsPage() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [meetups, setMeetups] = useState(null);
+
+  useEffect(() => {
+    const fetchMeetups = async () => {
+      try {
+        const response = await fetch(
+          "https://meetups-app-ae644-default-rtdb.europe-west1.firebasedatabase.app/meetups.json"
+        );
+        const data = await response.json();
+
+        if (data) {
+          const meetups = [];
+
+          for (const key in data) {
+            const meetup = {
+              id: key,
+              ...data[key],
+            };
+
+            meetups.push(meetup);
+          }
+
+          setMeetups(meetups);
+          setIsLoading(false);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchMeetups();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <section>
+        <p>Loading...</p>
+      </section>
+    );
+  }
+
   return (
     <section>
       <h1>All Meetups</h1>
-      <MeetupList meetups={DUMMY_DATA} />
+      <MeetupList meetups={meetups} />
     </section>
   );
 }
