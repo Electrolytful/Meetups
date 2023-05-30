@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-
 import { MeetupList } from "../../components";
+import styles from "./index.module.css";
 
 export default function AllMeetupsPage() {
   const [isLoading, setIsLoading] = useState(true);
+  const [noMeetups, setNoMeetups] = useState(false);
   const [meetups, setMeetups] = useState(null);
 
   useEffect(() => {
@@ -27,6 +28,10 @@ export default function AllMeetupsPage() {
           }
 
           setMeetups(meetups);
+          setNoMeetups(false);
+          setIsLoading(false);
+        } else {
+          setNoMeetups(true);
           setIsLoading(false);
         }
       } catch (err) {
@@ -40,7 +45,7 @@ export default function AllMeetupsPage() {
   if (isLoading) {
     return (
       <section>
-        <p>Loading...</p>
+        <p className={styles.loading}>Loading...</p>
       </section>
     );
   }
@@ -48,7 +53,11 @@ export default function AllMeetupsPage() {
   return (
     <section>
       <h1>All Meetups</h1>
-      <MeetupList meetups={meetups} />
+      {noMeetups ? (
+        <p className={styles.nomeetup}>No meetups currently exist. Add some.</p>
+      ) : (
+        <MeetupList meetups={meetups} />
+      )}
     </section>
   );
 }
