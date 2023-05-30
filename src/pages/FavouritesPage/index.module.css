@@ -1,0 +1,7 @@
+@import '../../globals.css';
+
+.empty {
+    color: var(--font-color);
+    font-size: var(--med-font);
+    margin-top: 20rem;
+}

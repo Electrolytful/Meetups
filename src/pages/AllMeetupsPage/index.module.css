@@ -1,0 +1,12 @@
+@import '../../globals.css';
+
+.loading {
+    color: var(--font-color);
+    font-size: var(--med-font);
+}
+
+.nomeetup {
+    color: var(--font-color);
+    font-size: var(--med-font);
+    margin-top: 20rem;
+}

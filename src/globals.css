@@ -1,0 +1,21 @@
+/* imports */
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300&family=Libre+Franklin:wght@300&display=swap');
+
+:root {
+  /* colors */
+  --light: #8FBFE0;
+  --dark: #0A1128;
+  --primary: #001F54;
+  --green: #22D37D;
+  --red: #DF2935;
+  --font-color: #fff;
+
+  /* fonts */
+  --almarai: 'Almarai', sans-serif;
+  --libre: 'Libre Franklin', sans-serif;
+
+  /* font sizes */
+  --small-font: 1rem;
+  --med-font: 1.5rem;
+  --large-font: 2rem;
+}

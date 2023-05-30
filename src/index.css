@@ -1,19 +1,4 @@
-/* imports */
-@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300&family=Roboto:wght@100&display=swap');
-
-:root {
-  /* colors */
-  --light: #8FBFE0;
-  --dark: #0A1128;
-  --primary: #001F54;
-  --green: #22D37D;
-  --red: #DF2935;
-  --font-color: #fff;
-
-  /* fonts */
-  --almarai: 'Almarai', sans-serif;
-  --roboto: 'Roboto', sans-serif;
-}
+@import './globals.css';
 
 * {
   box-sizing: border-box;
@@ -27,13 +12,13 @@ body {
 }
 
 h1 {
-  font-family: var(--roboto);
-  font-size: 2.5rem;
+  font-family: var(--libre);
+  font-size: var(--large-font);
   color: var(--font-color);
 }
 
 h2 {
-  font-family: var(--roboto);
-  font-size: 1.5rem;
+  font-family: var(--libre);
+  font-size: var(--med-font);
   color: var(--font-color);
 }
